@@ -28,7 +28,7 @@ class LandingLogic extends GetxController {
   }
 
   void goToPatientQueueList() {
-    timer = Timer.periodic(Duration(milliseconds: 600), (time) {
+    timer = Timer.periodic(Duration(seconds: 1), (time) {
       Get.offNamed('/patient_queue_list', arguments: {
         'data': patient.value,
         'statusOffline': statusOffline.value
