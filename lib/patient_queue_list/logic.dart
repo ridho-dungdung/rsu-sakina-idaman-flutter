@@ -60,7 +60,11 @@ class PatientQueueListLogic extends GetxController {
         statusOffline.value = true;
       });
     } else {
-      patients.add(PatientQueue.fromJson(data[patients.length]));
+      if(patients.length < 9) {
+        patients.add(PatientQueue.fromJson(data[patients.length]));
+      } else {
+        timer?.cancel();
+      }
     }
     refreshCtrl.refreshCompleted();
     isLoading.value = false;

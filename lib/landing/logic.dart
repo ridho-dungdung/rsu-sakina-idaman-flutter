@@ -21,7 +21,7 @@ class LandingLogic extends GetxController {
       }
     }).catchError((err) {
       statusOffline.value = true;
-      goToPatientQueueList();
+      // goToPatientQueueList();
     });
 
     goToPatientQueueList();

@@ -6,6 +6,8 @@ class DioClient{
     BaseOptions(
       // baseUrl: 'http://10.0.2.2:8000/api',
       baseUrl: 'http://192.168.1.9:8001/api',
+      receiveTimeout: Duration(minutes: 1),
+      connectTimeout: Duration(minutes: 1)
     )
   )..interceptors.add(LogInterceptor(
   logPrint: (o) => debugPrint(o.toString()),
