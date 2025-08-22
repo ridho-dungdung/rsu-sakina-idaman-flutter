@@ -24,7 +24,6 @@ class PatientQueueListLogic extends GetxController {
     // TODO: implement onInit
     isLoading.value = true;
     refreshCtrl.isLoading;
-    print("ARGUMENT COG ${Get.arguments['data']}");
     bool statusOfflineArgument = Get.arguments['statusOffline'];
     if(!statusOfflineArgument) {
       patients.value.add(Get.arguments['data']);
