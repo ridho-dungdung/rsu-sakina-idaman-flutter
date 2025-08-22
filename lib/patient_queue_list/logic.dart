@@ -89,13 +89,17 @@ class PatientQueueListLogic extends GetxController {
         dismissDirection: DismissDirection.up,
         duration: Duration(milliseconds: 1000),
         margin: EdgeInsets.only(
-          bottom: MediaQuery.of(context).size.height-180,
-          left: 14,
-          right: 14
+          bottom: MediaQuery.of(context).size.height-200,
+          left: 12,
+          right: 12
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(14)
         ),
         behavior: SnackBarBehavior.floating,
-        backgroundColor: Colors.green.shade600,
+        backgroundColor: Colors.green.shade700,
         content: Text(text.replaceAll(' ', ''),
+          textAlign: TextAlign.center,
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),)
     ));
   }

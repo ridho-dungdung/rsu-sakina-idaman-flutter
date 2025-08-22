@@ -26,11 +26,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/landing', page: () => LandingPage()),
         GetPage(name: '/patient_queue_list', page: () => PatientQueueListPage())
       ],
-      // routes: {
-      //   'landing' : LandingPage(),
-      // },
       initialRoute: '/landing',
-      // initialRoute: '/patient_queue_list',
     );
   }
 }

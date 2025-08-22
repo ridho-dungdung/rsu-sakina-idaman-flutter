@@ -14,7 +14,6 @@ class LandingLogic extends GetxController {
     // TODO: implement onInit
     super.onInit();
     await DioClient().get('/patient-queue/1').then((res) {
-      print('RES COG ${res}');
       if(res['data'] != null) {
         patient.value = PatientQueue.fromJson(res['data']);
       } else {
@@ -22,9 +21,14 @@ class LandingLogic extends GetxController {
       }
     }).catchError((err) {
       statusOffline.value = true;
+      goToPatientQueueList();
     });
 
-    timer = Timer.periodic(Duration(seconds: 1), (time) {
+    goToPatientQueueList();
+  }
+
+  void goToPatientQueueList() {
+    timer = Timer.periodic(Duration(milliseconds: 600), (time) {
       Get.offNamed('/patient_queue_list', arguments: {
         'data': patient.value,
         'statusOffline': statusOffline.value
